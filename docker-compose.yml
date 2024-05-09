@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  lets_meet_bot:
+    container_name: lets_meet_bot
+    build: .
+    command: bash -c 'python3 ./bot/main.py'
+    restart: unless-stopped
+    env_file: ./.env
+    volumes:
+      - ./bot:/src/bot
+    environment:
+      - DB_URL=postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:${DB_PORT}/${POSTGRES_DB}
+  
+  db:
+    container_name: lets_meet_db
+    image: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgres/data
+    restart: unless-stopped
+    env_file: ./.env
