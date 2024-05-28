@@ -70,7 +70,7 @@ async def get_photo(message: types.Message, state: FSMContext):
     if not os.path.isdir(f"{settings.photo_path}/{message.from_user.id}/"):
         os.mkdir(f"{settings.photo_path}/{message.from_user.id}")
     await message.bot.download(file=file_id, destination=f"{settings.photo_path}/{message.from_user.id}/main_photo.jpg")
-    await message.answer("Поздравляю ты зарегистрировался")
+    await message.answer("Поздравляем, твоя анкета заполнена 🥳")
     await registration(state, message)
 
 
@@ -88,7 +88,7 @@ async def start(message: types.Message, state: FSMContext):
         user_info = await db.db_get_user_data(session, message.from_user.id)
     if not user_info:
         await state.clear()
-        await message.answer("Привет! Зарегестрируйся.\nВведи имя")
+        await message.answer("Привет!\nЭто ДавайДружить - сервис для знакомств в твоём телефоне 😊\nНапиши как тебя зовут")
         await state.set_state(States.name)
     else:
         await show_menu(message)

@@ -5,7 +5,7 @@ services:
     container_name: lets_meet_bot
     build: .
     command: bash -c 'python3 ./bot/main.py'
-    restart: unless-stopped
+    restart: always
     env_file: ./.env
     volumes:
       - ./bot:/src/bot
@@ -19,5 +19,5 @@ services:
       - 5432:5432
     volumes:
       - ./postgres_data:/var/lib/postgres/data
-    restart: unless-stopped
+    restart: always
     env_file: ./.env
