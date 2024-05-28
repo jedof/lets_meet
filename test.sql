@@ -1,0 +1,11 @@
+INSERT INTO users (tg_user_id, user_name, gender, age, city) VALUES (1000, 'Nikita', 'Мужской', 20, 'Odintsovo');
+INSERT INTO users (tg_user_id, user_name, gender, age, city) VALUES (13534, 'Victor', 'Мужской', 25, 'Odintsovo');
+INSERT INTO users (tg_user_id, user_name, gender, age, city) VALUES (53235, 'Nikita', 'Мужской', 16 'Odintsovo');
+INSERT INTO users (tg_user_id, user_name, gender, age, city) VALUES (156853, 'Masha', 'Женский', 22, 'Odintsovo');
+INSERT INTO users (tg_user_id, user_name, gender, age, city) VALUES (756, 'Nikita', 'Женский', 23, 'Odintsovo');
+INSERT INTO likes (like_user_id, liked_user_id) VALUES (1000, 53235);
+INSERT INTO likes (like_user_id, liked_user_id) VALUES (1000, 13534);
+INSERT INTO likes (like_user_id, liked_user_id) VALUES (156853, 1000);
+INSERT INTO likes (like_user_id, liked_user_id) VALUES (1319656277, 1000);
+INSERT INTO likes (like_user_id, liked_user_id) VALUES (13534, 756);
+INSERT INTO likes (like_user_id, liked_user_id) VALUES (53235, 1000);
